@@ -34,8 +34,8 @@ class DocumentProcessor:
             # Clean text and split into chunks
             cleaned_text = re.sub(r'\s+', ' ', text.strip())
 
-            # Split into 5000-char chunks with 50-char overlap
-            chunk_size = 5000
+            # Split into 4000-char chunks with 50-char overlap
+            chunk_size = 4000
             overlap = 50
             start = 0
             while start < len(cleaned_text):
@@ -109,7 +109,7 @@ class RAGSystem:
     def __init__(self):
         self.llm = Llama(
             model_path="mistral-7b-instruct-v0.2.Q4_K_M.gguf",
-            n_ctx=2048,
+            n_ctx=5120,
             n_threads=4,
             n_gpu_layers=16  # Use GPU if available
         )
