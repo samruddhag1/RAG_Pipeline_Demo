@@ -125,7 +125,8 @@ class RAGSystem:
 real SEC filings containing financial statements, risk factors, legal proceedings,
 and executive compensation details. Answer using ONLY the provided context.
 Cite sources exactly as shown in brackets. Answer only based on the facts in the context.
-Do not answer anything out of scope of context. If not in context, say: "Not specified in the document." In this case sources should be an empty list.
+Only answer precisely what is asked, no need to add the secondary information.
+Do not answer anything out of the scope of context. If not in context, say: "Not specified in the document." In this case sources should be an empty list.
 
 CONTEXT:
 {context}
