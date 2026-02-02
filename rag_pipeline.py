@@ -109,7 +109,7 @@ class RAGSystem:
     def __init__(self):
         self.llm = Llama(
             model_path="mistral-7b-instruct-v0.2.Q4_K_M.gguf",
-            n_ctx=4096,
+            n_ctx=2048,
             n_threads=4,
             n_gpu_layers=16  # Use GPU if available
         )
@@ -138,7 +138,7 @@ ANSWER (with citations):"""
     def generate(self, prompt: str) -> str:
         output = self.llm(
             prompt,
-            max_tokens=512,
+            max_tokens=256,
             temperature=0.1,
             top_p=0.9,
             stop=["CONTEXT:", "QUESTION:", "\n\n"]
